@@ -67,7 +67,7 @@
         } else {
             echo "非法的文件格式";
         }
-        header("Location: http://192.168.1.6/blog/detail.php?category=" . $_POST["category"] . "&id=" . $_POST["id"]);
+        header("Location: http://192.168.1.6/inventory/detail.php?category=" . $_POST["category"] . "&id=" . $_POST["id"]);
         ?>
     </div>
 </body>

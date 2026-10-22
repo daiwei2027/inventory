@@ -15,6 +15,7 @@
 		?>
 	</div>
 	<?php
+	$id = $_GET["id"];
 	$sql = 'SELECT * FROM goods WHERE id=' . $id;
 	$result = $conn->query($sql);
 	$row = $result->fetch_row();
