@@ -66,23 +66,23 @@
         } else {
             echo "非法的文件格式";
         }
-        
-	$sql = 'SELECT count(*) FROM goods WHERE category=' . $_POST["category"];
-            $result = $conn->query($sql);
-            $row = $result->fetch_row();
-            $current = 1;
-            $pages = 1;
-            if ($row[0] == 0) {
-                $pages = 0;
-            } else if ($row[0] % 10 == 0) {
-                $pages = $row[0] / 10;
-            } else {
-                $pages = (int) ($row[0] / 10 + 1);
-            }
-            $current = $pages;
 
-		$conn->close();
-		header("Location: http://192.168.1.6/inventory/view.php?category=" . $_POST["category"]  . "&current=" . $current);
+        $sql = 'SELECT count(*) FROM goods WHERE category=' . $_POST["category"];
+        $result = $conn->query($sql);
+        $row = $result->fetch_row();
+        $current = 1;
+        $pages = 1;
+        if ($row[0] == 0) {
+            $pages = 0;
+        } else if ($row[0] % 10 == 0) {
+            $pages = $row[0] / 10;
+        } else {
+            $pages = (int) ($row[0] / 10 + 1);
+        }
+        $current = $pages;
+
+        $conn->close();
+        header("Location: http://192.168.1.6/inventory/view.php?category=" . $_POST["category"]  . "&current=" . $current);
         ?>
     </div>
 </body>
